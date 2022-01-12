@@ -14,3 +14,7 @@ https://cti1650.github.io/ar_test/src/VideoTexture/
 - [Search - CodeSandbox](https://codesandbox.io/search?refinementList%5Btemplate%5D=&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=@react-three/xr&page=2&configure%5BhitsPerPage%5D=12)
 
 - [pmndrs/react-xr: 🤳 VR/AR with react-three-fiber](https://github.com/pmndrs/react-xr)
+
+- [pmndrs/react-three-fiber: 🇨🇭 A React renderer for Three.js](https://github.com/pmndrs/react-three-fiber)
+
+- [React Three Fiber Documentation](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
