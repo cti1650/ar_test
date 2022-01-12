@@ -4,6 +4,10 @@
 
 https://cti1650.github.io/ar_test/src/VideoTexture/
 
+起動して下のマーカーをカメラで読み込んでみてください！
+
+![マーカー](https://stemkoski.github.io/AR-Examples/markers/hiro.png)
+
 
 ## 資料
 
