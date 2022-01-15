@@ -24,3 +24,5 @@ https://cti1650.github.io/ar_test/src/VideoTexture/
 - [pmndrs/react-three-fiber: 🇨🇭 A React renderer for Three.js](https://github.com/pmndrs/react-three-fiber)
 
 - [React Three Fiber Documentation](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+
+- [会社でAR技術を使いたい意欲が沸いたので、サンプルアプリ作ってみた｜SHiMPAY｜note](https://note.com/pes88/n/n2c8f5dd57712)
