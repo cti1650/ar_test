@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body
-    class="container mx-auto max-w-[1000px]"
-    style="margin: 0px; overflow: hidden"
+  style="margin : 0px; overflow: hidden;"
   >
-    <h1 class="py-4 text-center text-4xl">Test Case</h1>
+    <a-scene embedded arjs class="w-full h-full">
+      <a-marker preset="hiro"></a-marker>
+      <a-entity camera></a-entity
+    ></a-scene>
     <div id="app"></div>
     <script
       crossorigin
@@ -25,22 +27,27 @@
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-      const domContainer = document.querySelector("#app");
-      ReactDOM.render(
-        <div className="w-full h-full">
-          <a-scene embedded arjs="debugUIEnabled:true;">
-            <a-marker preset="hiro">
-              <a-box
-                position="-1 0.5 -3"
-                rotation="0 45 0"
-                color="#4CC3D9"
-              ></a-box>
-            </a-marker>
-            <a-entity camera></a-entity>
-          </a-scene>
-        </div>,
-        domContainer
-      );
+      const Dinosaur = () => {
+        return (
+          <a-entity
+            position="0 0 0"
+            scale="0.05 0.05 0.05"
+            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+          ></a-entity>
+        );
+      };
+      const WireFrameBox = () => {
+        return (
+          <a-box position="0 0.5 0" wireframe="true"></a-box>
+        )
+      }
+      const App = () => {
+        return (<>
+        <div class="fixed bottom-0 right-0"></div>
+        </>)
+      }
+      ReactDOM.render(<WireFrameBox />, document.querySelector("a-marker[preset=hiro]"));
+      ReactDOM.render(<App />, document.querySelector("#app"));
     </script>
   </body>
 </html>
