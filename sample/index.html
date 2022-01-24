@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body
+    class="container mx-auto max-w-[1000px]"
+    style="margin: 0px; overflow: hidden"
+  >
+    <h1 class="py-4 text-center text-4xl">Test Case</h1>
+    <div id="app"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const domContainer = document.querySelector("#app");
+      ReactDOM.render(
+        <div className="w-full h-full">
+          <a-scene embedded arjs="debugUIEnabled:true;">
+            <a-marker preset="hiro">
+              <a-box
+                position="-1 0.5 -3"
+                rotation="0 45 0"
+                color="#4CC3D9"
+              ></a-box>
+            </a-marker>
+            <a-entity camera></a-entity>
+          </a-scene>
+        </div>,
+        domContainer
+      );
+    </script>
+  </body>
+</html>
