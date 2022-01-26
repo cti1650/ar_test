@@ -12,6 +12,7 @@
   <body style="margin: 0px; overflow: hidden">
     <a-scene arjs>
       <a-marker preset="hiro" id="app"> </a-marker>
+      <a-marker type='pattern' url='./marker/pattern-menu_bars.patt' id="bars"> </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
     <script
@@ -36,15 +37,21 @@
       const WireFrameBox = () => {
         return <a-box position="0 0.5 0" wireframe="true"></a-box>;
       };
-      const App = () => {
+      const App1 = () => {
         return (
           <React.Fragment>
             <WireFrameBox />
+          </React.Fragment>
+        );
+      };
+      const App2 = () => {
+        return (
+          <React.Fragment>
             <Dinosaur />
           </React.Fragment>
         );
       };
-      ReactDOM.render(<App />, document.getElementById("app"));
+      ReactDOM.render(<App2 />, document.getElementById("bars"));
     </script>
   </body>
 </html>
