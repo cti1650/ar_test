@@ -11,7 +11,7 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene arjs>
-      <a-marker preset="hiro" id="app"> </a-marker>
+      <a-marker preset="hiro" id="app"></a-marker>
       <a-entity camera></a-entity>
     </a-scene>
     <script
@@ -37,9 +37,17 @@
         return <a-box position="0 0.5 0" wireframe="true"></a-box>;
       };
       const App = () => {
+        const [rendered, setRendered] = React.useState(true);
+        const comp = React.useCallback(() => {
+          return (
+            <React.Fragment>
+              <Dinosaur />
+            </React.Fragment>
+          );
+        }, []);
         return (
           <React.Fragment>
-            <WireFrameBox />
+            {comp()}
           </React.Fragment>
         );
       };
