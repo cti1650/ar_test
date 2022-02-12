@@ -6,52 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style="margin: 0px; overflow: hidden">
-    <a-scene arjs>
-      <a-marker preset="hiro" id="app"></a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js" defer></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" defer></script>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
+      defer
     ></script>
     <script
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      defer
     ></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      const Dinosaur = () => {
-        return (
-          <a-entity
-            position="0 0 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-          ></a-entity>
-        );
-      };
-      const WireFrameBox = () => {
-        return <a-box position="0 0.5 0" wireframe="true"></a-box>;
-      };
-      const App = () => {
-        const [rendered, setRendered] = React.useState(true);
-        const comp = React.useCallback(() => {
-          return (
-            <React.Fragment>
-              <Dinosaur />
-            </React.Fragment>
-          );
-        }, []);
-        return (
-          <React.Fragment>
-            {comp()}
-          </React.Fragment>
-        );
-      };
-      ReactDOM.render(<App />, document.getElementById("app"));
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+      defer
+    ></script>
+    <script type="text/babel" src="src/script.js" defer>
     </script>
+  </head>
+  <body class="app" style="margin: 0px; overflow: hidden">
+    
   </body>
 </html>
