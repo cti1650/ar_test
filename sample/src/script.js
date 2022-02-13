@@ -11,17 +11,19 @@ const WireFrameBox = () => {
   return <a-box position="0 0.5 0" wireframe="true"></a-box>;
 };
 const ARFrame = (props) => {
+  console.log(props)
   return (
-    <a-scene arjs>
+    <React.Fragment>
       <a-marker preset="hiro" id="app">
         {props.children}
       </a-marker>
       <a-entity camera></a-entity>
-    </a-scene>
+    </React.Fragment>
   );
 };
 const App2 = () => {
   const [rendered, setRendered] = React.useState(true);
+  console.log("done")
   const comp = React.useCallback(() => {
     return (
       <ARFrame>
@@ -33,10 +35,11 @@ const App2 = () => {
 };
 
 const App = () => {
+  console.log("done")
   return (
     <ARFrame>
       <Dinosaur />
     </ARFrame>
   );
 };
-ReactDOM.render(<App />, document.getElementById(".app"));
+ReactDOM.render(<App2 />, document.getElementById("app"));
