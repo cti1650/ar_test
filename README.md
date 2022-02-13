@@ -6,6 +6,14 @@ https://cti1650.github.io/ar_test/src/VideoTexture/
 
 ![QR](https://qr.cti-tl.com/?url=https://cti1650.github.io/ar_test/src/VideoTexture/)
 
+
+- React動作検証用
+
+https://cti1650.github.io/ar_test/sample/
+
+![QR](https://qr.cti-tl.com/?url=https://cti1650.github.io/ar_test/sample/)
+
+
 起動して下のマーカーをカメラで読み込んでみてください！
 
 ![マーカー](https://stemkoski.github.io/AR-Examples/markers/hiro.png)
