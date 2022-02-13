@@ -69,3 +69,15 @@ https://cti1650.github.io/ar_test/sample/
 
 - [Entity-Component-System – A-Frame](https://aframe.io/docs/master/introduction/entity-component-system.html)  
 
+- [GLTFの3Dモデル。無料ダウンロード。 | Creazilla](https://creazilla.com/ja/sections/3-3d/tags/649-gltf)  
+
+- [HTMLで創るVR、A-Frameはじめのいっぽ](https://fukuno.jig.jp/3076)  
+
+- [A-FRAME: プリミティブ一覧 - Qiita](https://qiita.com/matsukatsu/items/b1540dbf36da3d58dc80)  
+
+- [rotation – A-Frame](https://aframe.io/docs/0.9.0/components/rotation.html)  
+
+- [A-Frameで3Dモデルを表示する｜A-Frameをかじる本](https://zenn.dev/sdkfz181tiger/books/671f43a6883d34/viewer/887609)  
+
+- [useEffectフックのしくみ - Qiita](https://qiita.com/ossan-engineer/items/740425a0df937a47e093)  
+

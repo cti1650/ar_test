@@ -29,10 +29,15 @@ const App = () => {
   console.log("App done");
   return (
     <ARFrame>
-      {flag ? <Dinosaur /> : <WireFrameBox />}
+      {flag ? <Airplane /> : <Dinosaur />}
       <div className="fixed bottom-0 left-0 z-50 bg-gray-100 border-gray-300 m-1 py-2 px-4 rounded select-none">
         <label>
-          <input type="checkbox" onClick={handleChange} value={flag} className="mr-2"></input>
+          <input
+            type="checkbox"
+            onClick={handleChange}
+            value={flag}
+            className="mr-2"
+          ></input>
           <span>オブジェクト切り替え</span>
         </label>
       </div>
