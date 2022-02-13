@@ -1,29 +1,11 @@
-const Dinosaur = () => {
-  return (
-    <a-entity
-      position="0 0 0"
-      scale="0.05 0.05 0.05"
-      gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-    ></a-entity>
-  );
-};
-const WireFrameBox = () => {
-  return <a-box position="0 0.5 0" wireframe="true"></a-box>;
-};
 const ARFrame = (props) => {
-  console.log(props)
-  return (
-    <React.Fragment>
-      <a-marker preset="hiro" id="app">
-        {props.children}
-      </a-marker>
-      <a-entity camera></a-entity>
-    </React.Fragment>
-  );
+  console.log("load ARFrame");
+  console.log(props);
+  return <React.Fragment>{props.children}</React.Fragment>;
 };
 const App2 = () => {
   const [rendered, setRendered] = React.useState(true);
-  console.log("done")
+  console.log("App2 done");
   const comp = React.useCallback(() => {
     return (
       <ARFrame>
@@ -35,11 +17,26 @@ const App2 = () => {
 };
 
 const App = () => {
-  console.log("done")
+  const [flag, setFlag] = React.useState(false);
+  const handleChange = React.useCallback(
+    (e) => {
+      setFlag((prev) => {
+        return !prev;
+      });
+    },
+    [flag]
+  );
+  console.log("App done");
   return (
     <ARFrame>
-      <Dinosaur />
+      {flag ? <Dinosaur /> : <WireFrameBox />}
+      <div className="fixed bottom-0 left-0 z-50 bg-gray-100 border-gray-300 m-1 py-2 px-4 rounded select-none">
+        <label>
+          <input type="checkbox" onClick={handleChange} value={flag} className="mr-2"></input>
+          <span>オブジェクト切り替え</span>
+        </label>
+      </div>
     </ARFrame>
   );
 };
-ReactDOM.render(<App2 />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("hiro_maker"));

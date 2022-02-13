@@ -5,29 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js" sync></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js" sync></script>
     <script
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
-      defer
+      sync
     ></script>
     <script
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      defer
+      sync
     ></script>
     <script
       src="https://unpkg.com/babel-standalone@6/babel.min.js"
-      defer
+      sync
     ></script>
+    <script type="text/babel" src="src/parts.js" defer>
+    </script>
     <script type="text/babel" src="src/script.js" defer>
     </script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <a-scene arjs id="app">
-
+    <a-scene embedded arjs>
+      <a-marker preset="hiro" id="hiro_maker"></a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
