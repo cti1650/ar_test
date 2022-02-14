@@ -34,3 +34,17 @@ const Airplane = () => {
     ></a-entity>
   );
 };
+const Move = () => {
+  return (
+    <React.Fragment>
+      <a-video
+        src="#video_namahage"
+        position="0 0 0"
+        rotation="90 0 0"
+        width="2"
+        height="2"
+        loop="true"
+      ></a-video>
+    </React.Fragment>
+  );
+};

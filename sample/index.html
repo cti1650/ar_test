@@ -31,8 +31,14 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
+      <a-assets timeout="0">
+        <video
+          id="video_namahage"
+          src="./viceo/sintel.mp4"
+          loop="true"
+        ></video>
+      </a-assets>
       <a-marker preset="hiro" id="hiro_maker"></a-marker>
-      <a-marker preset="kanji" id="kanji_maker"></a-marker>
       <a-entity id="parent"></a-entity>
       <a-entity camera></a-entity>
     </a-scene>
