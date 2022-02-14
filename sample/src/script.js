@@ -16,7 +16,7 @@ const App2 = () => {
   return <React.Fragment>{comp()}</React.Fragment>;
 };
 
-const App = () => {
+const HiroApp = () => {
   const [flag, setFlag] = React.useState(false);
   const handleChange = React.useCallback(
     (e) => {
@@ -26,7 +26,7 @@ const App = () => {
     },
     [flag]
   );
-  console.log("App done");
+  console.log("HiroApp done");
   return (
     <ARFrame>
       {flag ? <Airplane /> : <Dinosaur />}
@@ -44,4 +44,20 @@ const App = () => {
     </ARFrame>
   );
 };
-ReactDOM.render(<App />, document.getElementById("hiro_maker"));
+const KanjiApp = () => {
+  console.log("KanjiApp done");
+  return (
+    <ARFrame>
+    </ARFrame>
+  );
+};
+const ParentObject = () => {
+  console.log("ParentObject done");
+  return (
+    <ARFrame>
+    </ARFrame>
+  );
+};
+// ReactDOM.render(<ParentObject />, document.getElementById("parent"));
+ReactDOM.render(<HiroApp />, document.getElementById("hiro_maker"));
+// ReactDOM.render(<KanjiApp />, document.getElementById("kanji_maker"));
