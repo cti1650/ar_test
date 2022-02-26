@@ -17,7 +17,7 @@ const HiroApp = () => {
   console.log("HiroApp done");
   return (
     <ARFrame>
-      {flag ? <Airplane /> : <Move />}
+      {flag ? <Airplane /> : <GlbSample />}
       <div className="fixed bottom-0 left-0 z-50 bg-gray-100 border-gray-300 m-1 py-2 px-4 rounded select-none">
         <label>
           <input

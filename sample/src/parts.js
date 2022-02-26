@@ -1,3 +1,13 @@
+const GlbSample = () => {
+  console.log("load glbSample");
+  return (
+    <a-entity
+      position="0 0 0"
+      scale="0.05 0.05 0.05"
+      gltf-model="model/sample/00000.glb"
+    ></a-entity>
+  );
+};
 const Dinosaur = () => {
   console.log("load Dinosaur");
   return (
@@ -13,7 +23,7 @@ const WireFrameBox = () => {
   return <a-box position="0 0.5 0" wireframe="true"></a-box>;
 };
 const Airplane = () => {
-  console.log("load Dinosaur");
+  console.log("load Airplane");
   const [rotationX, setRotationX] = React.useState(0);
   React.useEffect(() => {
     const tick = setTimeout(() => {
