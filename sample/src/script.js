@@ -4,22 +4,55 @@ const ARFrame = (props) => {
   return <React.Fragment>{props.children}</React.Fragment>;
 };
 
+const OptionBox = ({onClick,title,checked}) => {
+  return (
+    <button
+      className={["border-gray-300 m-1 py-1 px-2 rounded select-none",checked ? "bg-red-300": "bg-gray-100"].join(" ")}
+      onClick={() => {
+        onClick(title)
+      }}
+      value={title}
+      >
+        {title}
+      </button>
+  );
+}
+
+const dataSet = [
+  {title:"Dinosaur",component:Dinosaur},
+  {title:"GlbSample",component:GlbSample},
+  {title:"WireFrameBox",component:WireFrameBox},
+  {title:"Move",component:Move},
+];
+
 const HiroApp = () => {
-  const [flag, setFlag] = React.useState(false);
+  const [selectItem, setSelectItem] = React.useState("WireFrameBox");
+  const getComponent = React.useCallback(() => {
+    let component = null;
+    dataSet.forEach(item=>{
+      if(item.title === selectItem) {
+        component = item.component();
+      }
+    });
+    return component;
+  },[selectItem]);
   const handleChange = React.useCallback(
-    (e) => {
-      setFlag((prev) => {
-        return !prev;
+    (title) => {
+      setSelectItem(prev=>{
+        return prev !== title ? title : prev;
       });
     },
-    [flag]
+    [selectItem]
   );
   console.log("HiroApp done");
   return (
     <ARFrame>
-      {flag ? <Airplane /> : <GlbSample />}
-      <div className="fixed bottom-0 left-0 z-50 bg-gray-100 border-gray-300 m-1 py-2 px-4 rounded select-none">
-        <label>
+      {getComponent && getComponent()}
+      <div className="fixed bottom-0 left-0 flex flex-col z-50 bg-gray-100 border-gray-300 m-1 py-1 px-2 rounded select-none">
+      {dataSet.map(item=>{
+        return <OptionBox key={item.title} title={item.title} checked={item.title===selectItem} onClick={handleChange}/>
+      })}
+        {/* <label>
           <input
             type="checkbox"
             onClick={handleChange}
@@ -27,7 +60,7 @@ const HiroApp = () => {
             className="mr-2"
           ></input>
           <span>オブジェクト切り替え</span>
-        </label>
+        </label> */}
       </div>
     </ARFrame>
   );
