@@ -81,3 +81,6 @@ https://cti1650.github.io/ar_test/sample/
 
 - [useEffectフックのしくみ - Qiita](https://qiita.com/ossan-engineer/items/740425a0df937a47e093)  
 
+- [お手軽VR「A-Frame」｜なかしまぁ先生｜note](https://note.com/_nakashimmer_/n/na13faae10d75)
+
+- [Animation – A-Frame](https://aframe.io/docs/1.3.0/components/animation.html#sidebar)

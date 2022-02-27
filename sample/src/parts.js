@@ -24,24 +24,15 @@ const WireFrameBox = () => {
 };
 const Airplane = () => {
   console.log("load Airplane");
-  const [rotationX, setRotationX] = React.useState(0);
-  React.useEffect(() => {
-    const tick = setTimeout(() => {
-      setRotationX((prev) => {
-        return prev + 1;
-      });
-    }, 30);
-    return () => {
-      clearTimeout(tick);
-    };
-  }, [rotationX]);
   return (
     <a-entity
       position="0 0 0"
       scale="0.05 0.05 0.05"
-      rotation={`0 ${rotationX} 0`}
+      rotation={`0 0 0`}
       gltf-model="model/airplane/scene.gltf"
-    ></a-entity>
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing:linear;"
+    >
+    </a-entity>
   );
 };
 const Move = () => {

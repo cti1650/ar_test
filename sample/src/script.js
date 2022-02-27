@@ -19,6 +19,7 @@ const OptionBox = ({onClick,title,checked}) => {
 }
 
 const dataSet = [
+  {title:"Airplane",component:Airplane},
   {title:"Dinosaur",component:Dinosaur},
   {title:"GlbSample",component:GlbSample},
   {title:"WireFrameBox",component:WireFrameBox},
@@ -28,13 +29,10 @@ const dataSet = [
 const HiroApp = () => {
   const [selectItem, setSelectItem] = React.useState("WireFrameBox");
   const getComponent = React.useCallback(() => {
-    let component = null;
-    dataSet.forEach(item=>{
-      if(item.title === selectItem) {
-        component = item.component();
-      }
+    const data = [...dataSet].filter(item=>{
+      return item.title === selectItem;
     });
-    return component;
+    return data[0].component();
   },[selectItem]);
   const handleChange = React.useCallback(
     (title) => {
@@ -47,21 +45,12 @@ const HiroApp = () => {
   console.log("HiroApp done");
   return (
     <ARFrame>
-      {getComponent && getComponent()}
       <div className="fixed bottom-0 left-0 flex flex-col z-50 bg-gray-100 border-gray-300 m-1 py-1 px-2 rounded select-none">
       {dataSet.map(item=>{
         return <OptionBox key={item.title} title={item.title} checked={item.title===selectItem} onClick={handleChange}/>
       })}
-        {/* <label>
-          <input
-            type="checkbox"
-            onClick={handleChange}
-            value={flag}
-            className="mr-2"
-          ></input>
-          <span>オブジェクト切り替え</span>
-        </label> */}
       </div>
+      {getComponent && getComponent()}
     </ARFrame>
   );
 };
