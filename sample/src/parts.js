@@ -35,16 +35,17 @@ const Airplane = () => {
     </a-entity>
   );
 };
-const Move = () => {
+const Movie = () => {
+  console.log("load Movie");
   return (
     <React.Fragment>
       <a-video
+        id="video_movie_data"
         src="#video_namahage"
         position="0 0 0"
         rotation="90 0 0"
         width="2"
         height="2"
-        loop="true"
       ></a-video>
     </React.Fragment>
   );
