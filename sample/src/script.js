@@ -23,7 +23,6 @@ const dataSet = [
   {title:"Dinosaur",component:Dinosaur},
   {title:"GlbSample",component:GlbSample},
   {title:"WireFrameBox",component:WireFrameBox},
-  {title:"Movie",component:Movie},
 ];
 
 const HiroApp = () => {

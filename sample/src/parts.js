@@ -4,6 +4,7 @@ const GlbSample = () => {
     <a-entity
       position="0 0 0"
       scale="0.05 0.05 0.05"
+      rotation="270 180 0"
       gltf-model="model/sample/00000.glb"
     ></a-entity>
   );
