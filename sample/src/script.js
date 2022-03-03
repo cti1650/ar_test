@@ -49,7 +49,9 @@ const HiroApp = () => {
         return <OptionBox key={item.title} title={item.title} checked={item.title===selectItem} onClick={handleChange}/>
       })}
       </div>
-      {getComponent && getComponent()}
+      <div className="fixed top-0 left-0 w-full h-full">
+        {getComponent && getComponent()}
+      </div>
     </ARFrame>
   );
 };
