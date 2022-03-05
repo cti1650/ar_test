@@ -44,13 +44,11 @@ const HiroApp = () => {
   console.log("HiroApp done");
   return (
     <ARFrame>
+      {getComponent && getComponent()}
       <div className="fixed bottom-0 left-0 flex flex-col z-50 bg-gray-100 border-gray-300 m-1 py-1 px-2 rounded select-none">
       {dataSet.map(item=>{
         return <OptionBox key={item.title} title={item.title} checked={item.title===selectItem} onClick={handleChange}/>
       })}
-      </div>
-      <div className="fixed top-0 left-0 w-full h-full">
-        {getComponent && getComponent()}
       </div>
     </ARFrame>
   );
